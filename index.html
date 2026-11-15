@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Rays | Premium Natural Honey & Moringa Exports</title>
+<meta name="description" content="Organic Rays exports pure, natural forest honey and organic Moringa leaf powder to global buyers. Sustainably sourced, export-ready.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>"><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1e5a22;
+    --forest-deep: #123a16;
+    --gold: #f5b800;
+    --gold-soft: #ffd95a;
+    --cream: #f7f2e7;
+    --ink: #1d1d1b;
+    --muted: #6b6a62;
+    --line: rgba(31, 58, 43, 0.12);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.7;
+  }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; line-height: 1.15; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  .container { width: min(1140px, 92%); margin: 0 auto; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.95rem 2rem;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    transition: transform .2s, background .2s, color .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-gold { background: var(--gold); color: var(--forest-deep); }
+  .btn-gold:hover { background: var(--gold-soft); }
+  .btn-outline { border: 1px solid var(--gold-soft); color: var(--cream); }
+  .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+
+
+  /* Header */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    transition: background .3s, box-shadow .3s;
+  }
+  header.scrolled { background: rgba(19, 38, 25, 0.96); backdrop-filter: blur(8px); box-shadow: 0 2px 20px rgba(0,0,0,.15); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--cream); letter-spacing: 0.02em; }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--cream); font-size: 0.9rem; opacity: .85; transition: opacity .2s, color .2s; }
+  .nav-links a:hover { opacity: 1; color: var(--gold-soft); }
+  .nav-cta { padding: 0.6rem 1.4rem; font-size: 0.85rem; }
+  .menu-toggle { display: none; background: none; border: 0; color: var(--cream); font-size: 1.6rem; cursor: pointer; }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(201,162,74,.22), transparent 55%),
+      linear-gradient(160deg, var(--forest-deep) 0%, var(--forest) 60%, #2c5139 100%);
+    color: var(--cream);
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero h1 { font-size: clamp(2.8rem, 6vw, 4.8rem); margin-bottom: 1.2rem; }
+  .hero h1 em { color: var(--gold-soft); font-style: italic; font-weight: 500; }
+  .hero p.lead { font-size: 1.1rem; opacity: .85; max-width: 520px; margin-bottom: 2.2rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,211,160,.25);
+    border-radius: 24px;
+    padding: 2.5rem;
+    backdrop-filter: blur(6px);
+  }
+  .hero-card .stat { display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .hero-card .stat:last-child { border-bottom: 0; }
+  .hero-card .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold-soft); font-weight: 600; }
+  .hero-card .stat-label { font-size: 0.85rem; opacity: .75; text-transform: uppercase; letter-spacing: .12em; }
+
+  /* Sections */
+  section { padding: 110px 0; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 4rem; }
+  .section-head h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--forest); margin-bottom: 1rem; }
+  .section-head p { color: var(--muted); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-text h2 { font-size: clamp(2.2rem, 4vw, 3rem); color: var(--forest); margin-bottom: 1.4rem; }
+  .about-text p { color: var(--muted); margin-bottom: 1.1rem; }
+  .pillars { display: grid; gap: 1.2rem; }
+  .pillar {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 1.6rem 1.8rem; display: flex; gap: 1.2rem; align-items: flex-start;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .pillar:hover { transform: translateX(6px); box-shadow: 0 10px 30px rgba(31,58,43,.08); }
+  .pillar-icon { font-size: 1.6rem; }
+  .pillar h3 { font-size: 1.35rem; color: var(--forest); margin-bottom: .2rem; }
+  .pillar p { font-size: .95rem; color: var(--muted); }
+
+  /* Products */
+  .products { background: #fff; }
+  .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  .product {
+    background: var(--cream); border-radius: 22px; overflow: hidden;
+    border: 1px solid var(--line); display: flex; flex-direction: column;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .product:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(31,58,43,.12); }
+  .product-visual {
+    height: 260px; display: flex; align-items: center; justify-content: center;
+    font-size: 6rem;
+  }
+  .product-visual.honey { background: radial-gradient(circle at 50% 40%, #f6c65b, #c98a1a 70%); }
+  .product-visual.moringa { background: radial-gradient(circle at 50% 40%, #a9d18e, #3f7a4a 75%); }
+  .product-body { padding: 2.2rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+  .product-body h3 { font-size: 2rem; color: var(--forest); }
+  .product-body .origin { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  .product-body p { color: var(--muted); }
+  .specs { list-style: none; margin: .5rem 0 1rem; display: grid; gap: .5rem; }
+  .specs li { font-size: .92rem; display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding-bottom: .4rem; }
+  .specs li strong { font-weight: 500; color: var(--forest); }
+  .product-body .btn { margin-top: auto; align-self: flex-start; background: var(--forest); color: var(--cream); }
+  .product-body .btn:hover { background: var(--forest-deep); }
+
+  /* Why */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .why-card { text-align: center; padding: 2.2rem 1.4rem; border-radius: var(--radius); border: 1px solid var(--line); background: #fff; }
+  .why-card .num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold); font-weight: 600; }
+  .why-card h3 { font-size: 1.3rem; color: var(--forest); margin: .4rem 0 .5rem; }
+  .why-card p { font-size: .9rem; color: var(--muted); }
+
+  /* Contact */
+  .contact { background: linear-gradient(160deg, var(--forest-deep), var(--forest)); color: var(--cream); }
+  .contact .section-head h2 { color: var(--cream); }
+  .contact .section-head p { color: rgba(247,242,231,.75); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+  .contact-info h3 { font-size: 1.8rem; margin-bottom: 1.2rem; }
+  .contact-info p { opacity: .8; margin-bottom: .6rem; }
+  .contact-info strong { color: var(--gold-soft); font-weight: 500; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; background: rgba(255,255,255,.04); border: 1px solid rgba(232,211,160,.2); padding: 2.4rem; border-radius: 22px; }
+  form .full { grid-column: 1 / -1; }
+  label { display: block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; opacity: .8; margin-bottom: .4rem; }
+  input, select, textarea {
+    width: 100%; padding: .85rem 1rem; border-radius: 10px;
+    border: 1px solid rgba(232,211,160,.25); background: rgba(0,0,0,.2);
+    color: var(--cream); font: inherit; font-size: .95rem;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
+  select option { color: var(--ink); }
+  textarea { min-height: 110px; resize: vertical; }
+  form .btn { border: 0; cursor: pointer; font: inherit; }
+
+  /* Footer */
+  footer { background: var(--forest-deep); color: rgba(247,242,231,.6); padding: 2.5rem 0; font-size: .875rem; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer .logo { font-size: 1.3rem; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .product-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; position: absolute; top: 84px; left: 0; right: 0; flex-direction: column; background: var(--forest-deep); padding: 1.5rem 4%; gap: 1.2rem; }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: block; }
+    .nav-cta { display: none; }
+  }
+  @media (max-width: 560px) {
+    section { padding: 80px 0; }
+    .why-grid { grid-template-columns: 1fr; }
+    form { grid-template-columns: 1fr; padding: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="container nav">
+    <a href="#top" class="logo">Organic<span>Rays</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-gold nav-cta">Request a Quote</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Premium Exports · Nature, Refined</span>
+        <h1>Pure Forest Honey & <em>Moringa</em> Harvested with Care</h1>
+        <p class="lead">Organic Rays brings wild, unprocessed forest honey and single-origin Moringa leaf powder from the source to discerning buyers across the world.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-gold">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Become a Partner</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat"><span class="stat-label">Natural &amp; Unprocessed</span><span class="stat-num">100%</span></div>
+        <div class="stat"><span class="stat-label">Lab-Tested Purity</span><span class="stat-num">Certified</span></div>
+        <div class="stat"><span class="stat-label">Export Markets</span><span class="stat-num">Global</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="eyebrow">Our Story</span>
+        <h2>From the Forest to the World</h2>
+        <p>Organic Rays was founded on a simple belief: the finest nutrition comes from nature in its most honest form. We work directly with local forest beekeepers and moringa growers who follow traditional, chemical-free methods.</p>
+        <p>Every batch is handled with minimal intervention, tested for quality and purity, and packed to preserve the natural goodness that makes it exceptional.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌳</div>
+          <div><h3>Wild Forest Sourcing</h3><p>Honey collected from undisturbed forest ecosystems, far from industrial farming.</p></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🍃</div>
+          <div><h3>Single-Origin Moringa</h3><p>Shade-dried leaves that retain their color, aroma, and full nutrient profile.</p></div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <div><h3>Fair Partnerships</h3><p>Transparent pricing and long-term relationships with the farmers who grow our produce.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="products">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Products</span>
+        <h2>Two Gifts of the Earth</h2>
+        <p>Carefully sourced, minimally processed, and ready for export in bulk or private label.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-visual honey">🍯</div>
+          <div class="product-body">
+            <span class="origin">Origin: Forest Region, [Your Country]</span>
+            <h3>Natural Forest Honey</h3>
+            <p>Raw, unfiltered wild forest honey with a rich, complex flavor profile. Naturally rich in enzymes and antioxidants.</p>
+            <ul class="specs">
+              <li>Processing <strong>Raw, unheated</strong></li>
+              <li>Packaging <strong>Drums, jars, bulk</strong></li>
+              <li>Certifications <strong>Lab-tested</strong></li>
+            </ul>
+            <a href="#contact" class="btn">Request Specifications</a>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product-visual moringa">🌿</div>
+          <div class="product-body">
+            <span class="origin">Origin: [Your Region], [Your Country]</span>
+            <h3>Moringa Leaf Powder</h3>
+            <p>Fine-milled, shade-dried moringa leaves, packed with vitamins, minerals, and plant protein for food and wellness brands.</p>
+            <ul class="specs">
+              <li>Processing <strong>Shade-dried, milled</strong></li>
+              <li>Mesh size <strong>[Specify]</strong></li>
+              <li>Packaging <strong>Kraft bags, bulk</strong></li>
+            </ul>
+            <a href="#contact" class="btn">Request Specifications</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Organic Rays</span>
+        <h2>Built for Global Standards</h2>
+        <p>Everything we do is designed to meet the expectations of importers, retailers, and food brands worldwide.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card"><div class="num">01</div><h3>Traceability</h3><p>Full batch-level tracking from harvest to shipment.</p></div>
+        <div class="why-card"><div class="num">02</div><h3>Quality Testing</h3><p>Third-party lab analysis for purity and safety.</p></div>
+        <div class="why-card"><div class="num">03</div><h3>Export Documentation</h3><p>Phytosanitary, COA, and origin certificates handled for you.</p></div>
+        <div class="why-card"><div class="num">04</div><h3>Private Label</h3><p>Custom packaging and branding for your market.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color: var(--gold-soft)">Get in Touch</span>
+        <h2>Let's Build a Partnership</h2>
+        <p>Tell us what you need and we will send specifications, pricing, and sample options within 48 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Export Desk</h3>
+          <p><strong>Email</strong><br>hello@organicrays.com</p>
+          <p><strong>Phone / WhatsApp</strong><br>+[Country code] [Your number]</p>
+          <p><strong>Address</strong><br>[Your registered business address]</p>
+          <p><strong>Minimum order</strong><br>[e.g., 1 x 20ft container]</p>
+        </div>
+        <form id="inquiryForm" onsubmit="handleInquiry(event)">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" required>
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div>
+            <label for="country">Country</label>
+            <input id="country" name="country" required>
+          </div>
+          <div class="full">
+            <label for="product">Product of interest</label>
+            <select id="product" name="product">
+              <option>Natural Forest Honey</option>
+              <option>Moringa Leaf Powder</option>
+              <option>Both products</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="message">Quantity & requirements</label>
+            <textarea id="message" name="message" placeholder="Volume, packaging, certifications required, delivery port..."></textarea>
+          </div>
+          <div class="full">
+            <button type="submit" class="btn btn-gold">Send Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#top" class="logo">Organic<span>Rays</span></a>
+    <p>© <span id="year"></span> Organic Rays. All rights reserved.</p>
+    <p>Natural forest honey &amp; moringa exports</p>
+  </div>
+</footer>
+
+<script>
+  // Header style on scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Inquiry form: opens the visitor's email app with the details prefilled.
+  // Replace with a form service (Formspree, Web3Forms) later if you want submissions stored.
+  function handleInquiry(e) {
+    e.preventDefault();
+    const f = e.target;
+    const body = [
+      'Name: ' + f.name.value,
+      'Company: ' + f.company.value,
+      'Email: ' + f.email.value,
+      'Country: ' + f.country.value,
+      'Product: ' + f.product.value,
+      '',
+      f.message.value
+    ].join('\n');
+    const subject = encodeURIComponent('Export Inquiry: ' + f.product.value);
+    window.location.href = 'mailto:hello@organicrays.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+  }
+</script>
+</body>
+</html>
