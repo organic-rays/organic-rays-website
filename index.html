@@ -58,8 +58,6 @@
   .btn-outline { border: 1px solid var(--gold-soft); color: var(--cream); }
   .btn-outline:hover { background: rgba(255,255,255,0.08); }
 
-
-
   /* Header */
   header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
@@ -300,7 +298,7 @@
             <p>Fine-milled, shade-dried moringa leaves, packed with vitamins, minerals, and plant protein for food and wellness brands.</p>
             <ul class="specs">
               <li>Processing <strong>Shade-dried, milled</strong></li>
-              <li>Mesh size <strong>[Specify]</strong></li>
+              <li>Mesh size <strong>80 to 120 mesh</strong></li>
               <li>Packaging <strong>Kraft bags, bulk</strong></li>
             </ul>
             <a href="#contact" class="btn">Request Specifications</a>
@@ -343,7 +341,12 @@
           <p><strong>Address</strong><br>Buldana, Maharashtra, India</p>
           <p><strong>Minimum order</strong><br>[25 kg, 50 kg, 100 kg]</p>
         </div>
-        <form id="inquiryForm" onsubmit="handleInquiry(event)">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="75919555-2c22-4efc-b015-414a6db5a57d">
+          <input type="hidden" name="subject" value="New Export Inquiry - Organic Rays">
+          <input type="hidden" name="from_name" value="Organic Rays Website">
+          <input type="checkbox" name="botcheck" style="display:none">
+
           <div>
             <label for="name">Full name</label>
             <input id="name" name="name" required>
@@ -405,24 +408,6 @@
 
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Inquiry form: opens the visitor's email app with the details prefilled.
-  // Replace with a form service (Formspree, Web3Forms) later if you want submissions stored.
-  function handleInquiry(e) {
-    e.preventDefault();
-    const f = e.target;
-    const body = [
-      'Name: ' + f.name.value,
-      'Company: ' + f.company.value,
-      'Email: ' + f.email.value,
-      'Country: ' + f.country.value,
-      'Product: ' + f.product.value,
-      '',
-      f.message.value
-    ].join('\n');
-    const subject = encodeURIComponent('Export Inquiry: ' + f.product.value);
-    window.location.href = 'mailto:hello@organicrays.com?subject=' + subject + '&body=' + encodeURIComponent(body);
-  }
 </script>
 </body>
 </html>
