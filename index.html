@@ -143,6 +143,8 @@
   }
   .product-visual.honey { background: radial-gradient(circle at 50% 40%, #f6c65b, #c98a1a 70%); }
   .product-visual.moringa { background: radial-gradient(circle at 50% 40%, #a9d18e, #3f7a4a 75%); }
+  .product-visual { position: relative; overflow: hidden; }
+  .product-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .product-body { padding: 2.2rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
   .product-body h3 { font-size: 2rem; color: var(--forest); }
   .product-body .origin { font-size: .8rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
@@ -227,14 +229,14 @@
       <div>
         <span class="eyebrow">Premium Exports · Nature, Refined</span>
         <h1>Pure Forest Honey & <em>Moringa</em> Harvested with Care</h1>
-        <p class="lead">Organic Rays brings wild, natural forest honey and single-origin Moringa leaf powder from the source to discerning buyers across the world.</p>
+        <p class="lead">Organic Rays brings wild, unprocessed forest honey and single-origin Moringa leaf powder from the source to discerning buyers across the world.</p>
         <div class="hero-actions">
           <a href="#products" class="btn btn-gold">Explore Products</a>
           <a href="#contact" class="btn btn-outline">Become a Partner</a>
         </div>
       </div>
       <div class="hero-card">
-        <div class="stat"><span class="stat-label">Natural </span><span class="stat-num">100%</span></div>
+        <div class="stat"><span class="stat-label">Natural &amp; Unprocessed</span><span class="stat-num">100%</span></div>
         <div class="stat"><span class="stat-label">Lab-Tested Purity</span><span class="stat-num">Certified</span></div>
         <div class="stat"><span class="stat-label">Export Markets</span><span class="stat-num">Global</span></div>
       </div>
@@ -277,7 +279,9 @@
       </div>
       <div class="product-grid">
         <article class="product">
-          <div class="product-visual honey">🍯</div>
+          <div class="product-visual honey">
+            <img src="images/honey.webp" alt="Raw forest honey dripping from a wooden dipper into a glass jar">
+          </div>
           <div class="product-body">
             <span class="origin">Origin: Forest Region, India</span>
             <h3>Natural Forest Honey</h3>
@@ -291,7 +295,9 @@
           </div>
         </article>
         <article class="product">
-          <div class="product-visual moringa">🌿</div>
+          <div class="product-visual moringa">
+            <img src="images/moringa.jpg" alt="Dried moringa leaves beside a bowl of fine green moringa powder">
+          </div>
           <div class="product-body">
             <span class="origin">Origin: Nature Farms, India</span>
             <h3>Moringa Leaf Powder</h3>
